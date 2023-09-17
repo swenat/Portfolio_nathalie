@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Min Portfolio</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+		<a class="logo" href="#">Min Portfolio</a>
+		<nav class="navbar">
+			<a class="Hem" href="index.html">Hem</a> <a class="ommig" href="ommig.html">Om mig</a> <a class="portfolio" href="portfolio.html">Portfolio</a> <a class="hemfast" href="kontakt.html">Kontakt</a>
+		</nav>
+	</header>
+	<section class="hem">
+		<section class="contact">
+			<div class="contact-form">
+				<h1>Kontakta <span>mig</span></h1>
+				<p>Jag kan kontaktas via Linkedin, mail, telefon eller via nedanstående formulär.</p>
+				<form action="mailto:lysefeldt@outlook.com" method="post" enctype="text/plain">  <!--bortse ifrån funktionerna här då den inte är klar än-->
+					<div class="contact-logos">
+						<div style="margin-left: 2em">
+							<a href="https://github.com/swenat/" target="blank"><img alt="gitkonto" src="Bilder/github-logo-24%20(1).png"></a>
+						</div>
+						<div style="margin-left: 2em">
+							<a href="mailto:lysefeldt@outlook.com" target="blank"><img alt="mail" src="Bilder/envelope-regular-24%20(1).png"></a>
+						</div>
+						<div style="margin-left: 2em">
+							<a href="tel:46760241447"><img alt="Ring 0760241447" src="Bilder/phone-regular-24.png"></a>
+						</div>
+					</div>
+                        <input placeholder="Ditt namn" required="" type="text"> <input id="email" name="email" placeholder="Email" required="" type="email"> <input placeholder="Skriv en rubrik" required="" type="text"> 
+				<textarea cols="30" id="meddelande" name="meddelande" rows="10" placeholder="Ditt meddelande"></textarea> <input class="btn" name="button" type="submit" value="Skicka">
+				</form>
+			</div>
+			<div class="contact-img"><img alt="Bild på mig i rött" src="Bilder/jag3.png"></div>
+		</section>
+		<footer class="footer">
+			<p>© 2023 Nathalie Lysefeldt</p>
+		</footer>
+	</section>
+</body>
+</html>

@@ -1,0 +1,586 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+	background: black;
+	color: white;
+	/*förändrar textfärgen */
+}
+.header {
+	position: fixed;
+	top: 0;
+	/*vill att den ligger längst upp*/
+	left: 0;
+	width: 100%;
+	padding: 20px 10%;
+	background: transparent;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+.logo {
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	/*lägg till skugga här sen*/
+	font-weight: 600;
+	pointer-events: none;
+	/*ändra denna sen*/
+	animation: slideTop 2s ease forwards;
+}
+.navbar a {
+	display: inline-block;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 35px;
+}
+.navbar a.hemfast, .navbar a:hover {
+	background: linear-gradient(47deg, purple, blue, rgb(239, 12, 178))
+}
+.hem {
+	width: 100%;
+	height: 90vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	margin-top: 40px;
+	padding: 70px 10% 0;
+	/*ger padding 10% på sidorna och inget upptill */
+}
+.hem-innehall {
+	max-width: 500px;
+}
+.hem-innehall h1 {
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1;
+	padding-bottom: 5px;
+	animation: slideRight 1s ease forwards;
+	animation-delay: 0s;
+}
+.hem-innehall h3 {
+	font-size: 20px;
+	font-weight: 600;
+}
+.hem-innehall p {
+	font-size: 15px;
+	margin: 20px 0 40px;
+}
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	background-color: black;
+	color: white;
+	text-align: right;
+}
+
+/* Denna del tillhör index*/
+
+.knapp {
+	position: relative;
+	display: inline-flex;
+	/*ska omsluta */
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 50px;
+	border-radius: 40px;
+	font-size: 15px;
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: 1px;
+	z-index: 1;
+}
+.knapp::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	inset: 0;
+	background: linear-gradient(48deg, purple, blue, rgb(239, 12, 178));
+	background-size: 200%;
+	background-position: 0 0;
+	z-index: -1;
+	border-radius: 40px;
+	filter: blur(8px);
+	transition: .4s ease;
+}
+.knapp:hover::before {
+	background-position: 100% 0;
+}
+.knapp::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	inset: 0;
+	background: linear-gradient(48deg, purple, blue, rgb(239, 12, 178), rgb(230, 97, 179), pink);
+	background-position: 0 0;
+	background-size: 200%;
+	z-index: -1;
+	border-radius: 40px;
+	transition: .4s ease;
+}
+.knapp:hover::after {
+	background-position: 100% 0;
+}
+.hem-bild {
+	width: 400px;
+	height: 400px;
+}
+.hem-bild-cirkel {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: rgba(190, 13, 226, 0.671);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hem-bild-cirkel::after {
+	content: '';
+	position: absolute;
+	width: 370px;
+	height: 370px;
+	background: black;
+	border-radius: 50%;
+}
+.hem-bild-cirkel .bildjag {
+	position: relative;
+	width: 370px;
+	height: 370px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.bildjag img {
+	position: absolute;
+	top: 10px;
+	left: 48%;
+	transform: translateX(-53%);
+	max-width: 330px;
+	object-fit: cover;
+	z-index: 1;
+}
+/*sidans animationer */
+
+@keyframes slideTop {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	100% {
+		/*När den syns helt så är den på 0 på y axeln */
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes slideRight {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	100% {
+		/*När den syns helt så är den på 0 på y axeln */
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+/*slut på indexfilen*/
+
+/*style för portfolio-sidan */
+
+.container_port {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 0;
+	padding: 5px;
+	background: transparent;
+	max-width: 1200px;
+	justify-content: center;
+}
+.portfolio-innehall {
+	width: 750px;
+	background: transparent;
+}
+.portfolio-innehall p {
+	font-size: 30px;
+}
+.portfolio-text {
+	width: 750px;
+	margin: 5px;
+	padding: 5px;
+}
+.portfolio-innehall img {
+	width: 350px;
+	height: 250px;
+	object-fit: cover;
+	object-position: bottom;
+}
+section .timeline-part {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	width: 100%;
+	height: 80px;
+}
+.timeline {
+	position: relative;
+	max-width: 1200px;
+	margin-bottom: 0;
+}
+.container {
+	padding: 10px 50px;
+	position: relative;
+	width: 50%;
+	animation: movedown 1s linear forwards;
+	opacity: 0;
+	/*gör att bilden blir synlig när animationen startar*/
+}
+
+
+.container:nth-child(2) {
+	/*styr att containrarna med text syns i och med antalet sekunder för display*/
+	animation-delay: 1s;
+}
+.container:nth-child(3) {
+	animation-delay: 2s;
+}
+.container:nth-child(4) {
+	animation-delay: 3s;
+}
+.container:nth-child(5) {
+	animation-delay: 4s;
+}
+.container:nth-child(6) {
+	animation-delay: 5s;
+}
+.container:nth-child(7) {
+	animation-delay: 6s;
+}
+.container:nth-child(8) {
+	animation-delay: 7s;
+}
+.text-box {
+	padding: 20px 30px;
+	background: white;
+	position: relative;
+	border-radius: 6px;
+	font-size: 15px;
+	color: black;
+}
+.left-container {
+	left: 0;
+}
+.right-container {
+	left: 50%;
+}
+.right-container img {
+	left: -20px;
+}
+.timeline::after {
+	content: ' ';
+	position: absolute;
+	width: 6px;
+	height: 100%;
+	background: #fff;
+	top: 0;
+	left: 50%;
+	margin-left: -3px;
+	z-index: -1;
+	animation: moveline 6s linear forwards;
+}
+
+ 
+.text-box h2 {
+	font-weight: 600;
+	color: black;
+}
+.text-box small {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+.left-container-arrow {
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 28px;
+	z-index: 1;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid white;
+	right: -15px;
+}
+.right-container-arrow {
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 28px;
+	z-index: 1;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid white;
+	left: -15px;
+}
+
+/*animationer portfoliosidan */
+
+@keyframes movedown {
+	0% {
+		opacity: 1;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes moveline {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+
+ /*slut på animationer för portfoliosidan */
+
+/*slut på portfoliosidan*/
+
+/*style för kontaktamig-sidan */
+
+section {
+	padding: 5px 15%;
+}
+.contact {
+	background: black;
+	height: 100%;
+	width: 95%;
+	min-width: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	align-items: center;
+	grid-gap: 20px;
+	padding-top: 0;
+	margin-bottom: 0;
+}
+/*OBS! denna kontaktform har ingen funktion inlagd ännu gällande att skicka iväg informationen någonstans, det kommer snart */
+
+.contact-form {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	height: fit-content;
+}
+.contact-logos {
+	display: flex;
+	height: 50px;
+	width: auto;
+	padding: 5px;
+	margin: 5px;
+	justify-content: flex-start;
+	flex-direction: row;
+}
+
+.contact-logos li {
+	height: 10px;
+	width: 10px;
+	align-items: center;
+	z-index: 3
+}
+
+.contact-img img {
+	max-width: 100%;
+	width: 700px;
+	height: auto;
+	border-radius: 10px;
+}
+.contact-form h1 {
+	font-size: 40px;
+	color: #fff;
+	margin-bottom: 5px;
+	margin-top: 0;
+}
+span {
+	color: rgba(190, 13, 226, 0.671);
+}
+.contact-form p {
+	color: #c6c9d8bf;
+	letter-spacing: 1px;
+	font-size: 17.6px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+.contact-form form {
+	position: relative;
+	margin-bottom: 0;
+	padding-bottom: 5px;
+}
+.contact-form form input, form textarea {
+	width: 100%;
+	padding: 17px;
+	border: none;
+	outline: none;
+	background: #191919;
+	color: #fff;
+	font-size: 20px;
+	margin-bottom: 7px;
+	border-radius: 13px;
+}
+.contact-form textarea {
+	resize: none;
+	height: 150px;
+}
+.contact-form form .btn {
+	display: inline-block;
+	background: rgba(190, 13, 226, 0.671);
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 500;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	width: 230px;
+	height: 50px;
+	transition: ease .20s;
+	cursor: pointer;
+	
+}
+.contact-form form .btn:hover {
+	border: 2px dotted rgba(190, 13, 226, 0.671);
+	background: transparent;
+	transform: scale(1.1);
+}
+
+
+/*media queries */
+
+@media (max-width: 1570px) {
+	section {
+		padding: 210px 15%;
+		transition: 2s;
+	}
+	.contact-form h1 {
+		font-size: 50px;
+	}
+	.contact-form p {
+		margin-bottom: 0;
+	}
+}
+@media (max-width: 1090px) {
+	.contact {
+		grid-gap: 32px;
+		transition: .3s;
+	}
+}
+@media (max-width: 1000px) {
+	.contact {
+		grid-gap: 2px;
+		transition: .3s;
+	}
+}
+@media (max-width: 500px) {
+	.hem-innehall {
+		max-width: 150px;
+	}
+	.hem-innehall h1 {
+		font-size: 25px;
+	}
+	.hem-innehall p {
+		font-size: 10px;
+	}
+	.hem-bild {
+		width: 200px;
+		height: 200px;
+	}
+	.hem-bild-cirkel::after, .hem-bild-cirkel .bildjag {
+		width: 170px;
+		height: 170px;
+	}
+	.bildjag img {
+		width: 130px;
+		height: auto;
+	}
+	section {
+		max-width: 500px;
+	}
+	.contact {
+		grid-template-columns: repeat(1, 2fr);
+	}
+	.contact-form {
+		max-width: 300px;
+		margin-left: 55px;
+		margin-top: 90px;
+		position: relative;
+	}
+	.contact-form h1 {
+		font-size: 15px;
+	}
+	.contact-form p {
+		font-size: 10px;
+		margin-bottom: 2px;
+	}
+	.contact-form form input, form textarea {
+		font-size: 10px;
+	}
+	.contact-img img {
+		display: none;
+	}
+	.contact-logos img {
+		height: 20px;
+		width: auto;
+		margin: 0;
+		padding-left: 0;
+	}
+	.contact-logos ul {
+		margin: 0;
+		padding: 4px;
+	}
+}
+/*för tidslinjen*/
+
+@media screen and (max-width:600px) {
+	/*för att fixera allt när man har webbsidan i liten ruta så att det ser bra ut */
+	.timeline {
+		margin: 50px auto;
+		/*Här halverar vi antalet margins vad vi har i originella timelinen upptill då sidan är halverad */
+	}
+	.timeline::after {
+		left: 31px;
+	}
+	.container {
+		width: 100%;
+		padding-left: 80px;
+		padding-right: 25px;
+	}
+	.text-box {
+		font-size: 13px;
+	}
+	.text-box small {
+		margin-bottom: 10px;
+	}
+	.right-container {
+		left: 0;
+	}
+	.left-container img, .right-container img {
+		left: 10px;
+	}
+	.left-container-arrow, .right-container-arrow {
+		border-right: 15px solid #fff;
+		border-left: 0;
+		left: -15px;
+	}
+}
